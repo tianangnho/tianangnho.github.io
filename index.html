@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <title>TodoList</title>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>
+  <script type="module">
+    import * as fs from 'fs';
     $(document).ready(function(){
       var _getAllFilesFromFolder = function(dir) {
 
@@ -37,6 +38,7 @@
   </div>
   <div>
     <iframe src="./Projects/01_Shopping/CanMua.html" width="400" height="960"> </iframe>
+    <iframe src="./Projects/01_Shopping/CanHoc.html" width="400" height="960"> </iframe>
     <iframe src="./Projects/00_CAD/Countdown.html" width="400" height="960"> </iframe>
   </div>
 </body>
