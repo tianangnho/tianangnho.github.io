@@ -19,6 +19,9 @@
           )),
         (document.getElementById("seconds").innerText = Math.floor(
           (distance % minute) / second
+          )),
+        (document.getElementById("microSeconds").innerText = Math.floor(
+          (distance % second)
           ));
 
       //do something later when date is reached
