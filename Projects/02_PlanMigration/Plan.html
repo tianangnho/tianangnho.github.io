@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script type="text/javascript" src="js/timer.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script>
 		$(document).ready(function fillNo () {
@@ -34,6 +35,7 @@
 			$(table.rows[0].cells[3]).html("Sum: " + total);
 		});
 	</script>
+	
 	<meta charset="UTF-8">
 	<title>Plan for migration</title>
 	<style>
@@ -60,6 +62,7 @@
 			<td></td>
 			<td class ="center" id="expenses_sum" nowrap><b></br></br>Total Records</b></td>
 			<td class ="center"></td>
+			<td class ="center"></td>
 		</tr>
 		<tr>
 			<th>No.</th>
@@ -67,6 +70,7 @@
 			<th>Items</th>
 			<th>Condition</th>
 			<th>Deadline</th>
+			<th>Timer</th>
 		</tr>
 		<!--20220720-->
 		<tr>
@@ -75,6 +79,7 @@
 			<td></td>
 			<td class="right">-</td>
 			<td class="right">-</td>
+			<td class="timer">Jan 01, 2025 12:00:00</td>
 		</tr>
 		<tr>
 			<td class ="center"></td>
@@ -82,6 +87,7 @@
 			<td>TOEIC</td>
 			<td class="right">800</td>
 			<td class="right">Oct 1, 2023</td>
+			<td id ="timer2"></td>
 		</tr>
 		<tr>
 			<td class ="center"></td>
@@ -89,6 +95,7 @@
 			<td>New Job</td>
 			<td class="right">-</td>
 			<td class="right">-</td>
+			<td id ="timer3"></td>
 		</tr>
 		<tr>
 			<td class ="center"></td>
@@ -96,6 +103,7 @@
 			<td>Second Job</td>
 			<td class="right">-</td>
 			<td class="right">-</td>
+			<td id ="timer4"></td>
 		</tr>
 		<tr>
 			<td class ="center"></td>
@@ -103,6 +111,7 @@
 			<td>Finance</td>
 			<td class="right">3,000</td>
 			<td class="right">-</td>
+			<td id ="timer5"></td>
 		</tr>
 		<tr>
 			<td class ="center"></td>
@@ -110,6 +119,7 @@
 			<td>Debt</td>
 			<td class="right">1,700 + 210 + 100 + 20</td>
 			<td class="right">-</td>
+			<td id ="timer6"></td>
 		</tr>
 		<tr>
 			<td class ="center"></td>
@@ -117,6 +127,7 @@
 			<td></td>
 			<td class="right">-</td>
 			<td class="right">-</td>
+			<td id ="timer7"></td>
 		</tr>
 		<tr>
 			<td class ="center"></td>
@@ -124,6 +135,7 @@
 			<td>Canada</td>
 			<td class="right">-</td>
 			<td class="right">-</td>
+			<td id ="timer8"></td>
 		</tr>
 		<tr>
 			<td class ="center"></td>
@@ -131,6 +143,7 @@
 			<td>Malta</td>
 			<td class="right">-</td>
 			<td class="right">-</td>
+			<td id ="timer9"></td>
 		</tr>
 		<tr>
 			<td class ="center"></td>
@@ -138,6 +151,7 @@
 			<td>Litva</td>
 			<td class="right">-</td>
 			<td class="right">-</td>
+			<td id ="timer10"></td>
 		</tr>
 		<tr>
 			<td class ="center"></td>
@@ -145,6 +159,7 @@
 			<td>-</td>
 			<td class="right">-</td>
 			<td class="right">-</td>
+			<td id ="timer11"></td>
 		</tr>
 	</table>
 </body>
