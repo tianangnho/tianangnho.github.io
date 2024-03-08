@@ -1,43 +1,12 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="UTF-8">
-  <title>TodoList</title>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script type="module">
-    $(document).ready(function(){
-      getAllFilesFromFolder("./");
-    });
-    function getAllFilesFromFolder(dir) {
-
-      var filesystem = require("fs");
-      var results = [];
-
-      filesystem.readdirSync(dir).forEach(function(file) {
-
-        file = dir+'/'+file;
-        var stat = filesystem.statSync(file);
-
-        if (stat && stat.isDirectory()) {
-          results = results.concat(_getAllFilesFromFolder(file))
-        } else results.push(file);
-
-      });
-      return results;
-    };
-  </script>
-</head>
 <body style="background-color:#272a34;color:#dddddd;">
   <div>
     <h1>Hello new day!!!!! <a style="color:black" href="./myLife.html" target="_blank">!</a></h1>
+    <a href="index2.html">index2</a>
+    <a href="index3.html">index3</a>
   </div>
   <div>
-	<iframe src="./Projects/00_CAD/Countdown.html" width="400" height="900"> </iframe>
-    <iframe src="./Projects/02_PlanMigration/Plan.html" width="400" height="900"> </iframe>
-    <iframe src="./Projects/01_Shopping/CanMua.html" width="340" height="900"> </iframe>
-    <iframe src="./Projects/01_Shopping/CanHoc.html" width="340" height="900"> </iframe>
-
+    <iframe src="./Projects/05_CAD/Migration.html" width="800" height="1000" frameBorder="0"</iframe>
   </div>
 </body>
 
