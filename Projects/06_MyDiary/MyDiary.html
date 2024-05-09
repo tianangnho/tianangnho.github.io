@@ -1,20 +1,44 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<title>My diary</title>
+	<script>
+		window.addEventListener("load", () => {
+			fetch('data.json')
+				.then((res) => res.text())
+				.then((text) => {
+					//document.getElementById("demo").innerHTML = text;
+					const obj = JSON.parse(text);
+					//document.getElementById("demo").innerHTML = eobj.hoang;
+					var map = new Map(Object.entries(obj));
+					for (var item of map.keys()) {
+						var para = document.createElement("p");
+						para.innerHTML = item + "\n------";
+						document.getElementById("demo").appendChild(para);
+						parent = item;
+					}
+				});
+		});
+		function printChildren(parent) {
+			while (parent !== undefined) {
+				for (item in parent) {
+					var para = document.createElement("p");
+					para.innerHTML = item;
+					document.getElementById("demo").appendChild(para);
+					parent = item;
+				}
+
+			}
+
+		}
+	</script>
 </head>
-<body  style="background-color:#272a34;color:#dddddd;">
+
+<body style="background-color:#272a34;color:#dddddd;">
 	<h2>Creating an Object from a JSON String</h2>
 	<p id="demo"></p>
-	<script>
-		fetch('data.json')
-		.then((res) => res.text())
-		.then((text) => {
-			document.getElementById("demo").innerHTML = text;
-		const obj = JSON.parse(text);
-		document.getElementById("demo").innerHTML = obj;
-		});
-	</script>
 </body>
+
 </html>
