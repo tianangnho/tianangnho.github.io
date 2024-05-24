@@ -8,7 +8,8 @@
             "type": "msedge",
             "request": "launch",
             "name": "Open MyDiary.html",
-            "file": "c:\\00_myfolders\\01_Tools\\03_github\\danielnguyen12a115\\git\\tianangnho.github.io\\Projects\\06_MyDiary\\MyDiary.html"
+            "url": "c:\\00_myfolders\\01_Tools\\03_github\\danielnguyen12a115\\git\\tianangnho.github.io\\Projects\\06_MyDiary\\MyDiary.html",
+            "runtimeArgs": ["--disable-web-security"]
         }
     ]
 }

@@ -39,6 +39,29 @@
 <body style="background-color:#272a34;color:#dddddd;">
 	<h2>Creating an Object from a JSON String</h2>
 	<p id="demo"></p>
+
+	<p id="demo1"></p>
+	<p id="demo2"></p>
+	<p id="demo3"></p>
+	<script>
+		fetch('data.json')
+		.then((res) => res.text())
+		.then((text) => {
+		const obj = JSON.parse(text);
+		document.getElementById("demo").innerHTML = obj.length;
+		document.getElementById("demo1").innerHTML = obj.hoang[0].Apr[0].date;
+		var results = [];
+		const newArray = Object.assign([], obj);
+		var results2 = Array.from(obj);
+		for (d in obj) {
+			results.push(d);
+		}
+		document.getElementById("demo2").innerHTML =results[0];
+		document.getElementById("demo3").innerHTML = results[1];
+		});
+		
+	</script>
+
 </body>
 
 </html>
