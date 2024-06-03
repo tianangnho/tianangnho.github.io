@@ -1,0 +1,38 @@
+{
+    "SA": [
+        {
+            "Issue": "IDE-xxx",
+            "Summary": "",
+            "Priority": "",
+            "Urgent": "",
+            "Time": "",
+            "Deadline": ""
+        },
+        {
+            "Issue": "IDE-xxx",
+            "Summary": "",
+            "Priority": "",
+            "Urgent": "",
+            "Time": "",
+            "Deadline": ""
+        }
+    ],
+    "MU": [
+        {
+            "Issue": "IDE-xxx",
+            "Summary": "",
+            "Priority": "",
+            "Urgent": "",
+            "Time": "",
+            "Deadline": ""
+        },
+        {
+            "Issue": "IDE-xxx",
+            "Summary": "",
+            "Priority": "",
+            "Urgent": "",
+            "Time": "",
+            "Deadline": ""
+        }
+    ]
+}
