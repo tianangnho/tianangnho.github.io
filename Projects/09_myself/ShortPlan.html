@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script>
+		$(document).ready(function fillNo () {
+			var table = document.getElementById('table');
+			for (var i = 2, row; row = table.rows[i]; i++) {
+				$(row.cells[0]).html(i-1);
+			}
+
+		});
+	</script>
+	<script>
+		$(document).ready(function Sum_daily () {
+			var table = document.getElementById('table');
+			var preRow = 2;
+			var sum = 0;
+			var total = 0;
+			var days = 0;
+			for (var i = 2, row; row = table.rows[i]; i++) {
+				total = total + parseInt($(row.cells[3]).html().replace(/,/g, ''));
+				if (row.cells[1].innerHTML != '-') {
+					preRow = i;
+					sum = parseInt($(row.cells[3]).html().replace(/,/g, ''));
+					days++;
+				} else {
+					sum = sum + parseInt($(row.cells[3]).html().replace(/,/g, ''));
+				}
+				$(table.rows[preRow].cells[4]).html(sum);
+			}
+			$(table.rows[0].cells[1]).html("Days: " + days);
+			$(table.rows[0].cells[2]).html("Average: " + (total/days).toFixed(2));
+			$(table.rows[0].cells[3]).html("Sum: " + total);
+		});
+	</script>
+	<meta charset="UTF-8">
+	<title>Kế hoạch ngắn hạn</title>
+	<style>
+	table, th, td {
+		border: 1px solid burlywood;
+	}
+	.center {
+		text-align: center;
+	}
+	.right{
+		text-align: right;
+	}
+</style>
+</head>
+<body  style="background-color:#272a34;color:#dddddd;">
+	<h1>Jounery for dream of prosperity </h1>
+	<table id="table">
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td class ="center" id="expenses_sum" nowrap><b></br></br>Total Records</b></td>
+			<td class ="center"></td>
+		</tr>
+		<tr>
+			<th>No.</th>
+			<th>Deadline</th>
+			<th>Item</th>
+			<th>Amount</th>
+			<th>Note</th>
+		</tr>
+		<!--20220720-->
+		<tr>
+			<td class ="center"></td>
+			<td>Sep 2024</td>
+			<td>Read English news without translator</td>
+			<td class="right">-</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>Dec 2024</td>
+			<td>Listen and understand English news</td>
+			<td class="right">-</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>Mar 2025</td>
+			<td>Speaking</td>
+			<td class="right">-</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>Jun 2025</td>
+			<td>IELTS 6.5</td>
+			<td class="right">-</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>July 2025</td>
+			<td>Apply CAD</td>
+			<td class="right">-</td>
+			<td class="right">-</td>
+		</tr>
+		
+	</table>
+</body>
+</html>
