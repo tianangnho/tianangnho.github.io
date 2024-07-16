@@ -1,0 +1,77 @@
+{
+    "Section table": [
+        {
+            "Section": "SU",
+            "Group": "Stack",
+            "Start address": "0x00000004",
+            "End address": "0x00000103",
+            "Size (byte)": "256",
+            "Align": "4",
+            "Attribute": "---",
+            "Load address": "---"
+
+        },
+        {
+            "Section": "SI",
+            "Group": "Stack",
+            "Start address": "0x00000104",
+            "End address": "0x00000103",
+            "Size (byte)": "768",
+            "Align": "4",
+            "Attribute": "---",
+            "Load address": "---"
+
+        }
+    ],
+    "Object table": [
+        {
+            "Object File": "IDE-xxx",
+            "Start address": "",
+            "End address": "",
+            "Section": "",
+            "Group": ""
+        },
+        {
+            "Object File": "IDE-xxx",
+            "Start address": "",
+            "End address": "",
+            "Section": "",
+            "Group": ""
+        }
+    ],
+    "Symbol table":[
+        {
+            "Symbol": "SI",
+            "Start address": "Stack",
+            "End address": "0x00000104",
+            "Size (byte)": "0x00000103",
+            "Data type": "768",
+            "Declaration type": "4",
+            "Section": "---",
+            "Group": "---",
+            "Object File": "---"
+
+        }
+    ],
+    "Cross reference table": [
+        {
+            "Symbol": "SI",
+            "Location": "Stack",
+            "Section": "0x00000104",
+            "Call address": "0x00000103"
+        }
+
+    ],
+    "Vector": [
+        {
+            "Symbol": "SI",
+            "Symbol/Address": "Stack",
+            "Start address": "4",
+            "End address": "0x00000104",
+            "Size (byte)": "0x00000103",
+             "Section": "---",
+            "Group": "---",
+            "Object File": "---"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+1. Generate Java source code from json
+2. Generate JS code from json
+3. Create a base database
+4. Create a simple website
+5. Create a blog
+6. Create a roadmap
+7. Focus on task
+8. Buy printer
+9. Buy decal for laptop
+10. Buy glass for laptop
+11. Buy book sheft
