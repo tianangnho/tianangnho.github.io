@@ -1,10 +1,10 @@
-20240801
+20240805
 Mục tiêu: Tiến về vùng đất tự do
 
-Hôm nay tôi bắt đầu thực hiện việc viết nhật ký.
+Ngày 2 tôi viết nhật ký
 
 Mục tiêu:
- 1. Commnent tình hình của Memory Usage API RZ và xin hướng dẫn làm tiếp
+ 1. Focus vào công việc
  2. Vượt qua nỗi sợ bản thân: 
   +2.1 Đối mặt với sự sợ hãi
   +2.2 Lên kế hoạch và tìm cách chế ngự nó
@@ -14,17 +14,15 @@ Mục tiêu:
  4. Lên sẵn kế hoạch cho ngày mới
 
 Đánh giá:
- 1. Hoàn thành
- 2. Chưa hoàn thành
- 3. Chưa hoàn thành
- $. Chưa hoàn thành
+ 1. 
+ 2. 
 ====
 Các khoản cần chi tháng 8:
 Sum:		24,030 - 6,500
-+ Bank:		13,050
++ Bank:		13,050 - Done
 + H's fee:	 6,500
-+ Điện:		 1,000
++ Điện:		 1,000 - Done
 + Nước:		   200
-+ Internet:	   200
-+ Thẻ Visa:	 3,080
++ Internet:	   200 - Done
++ Thẻ Visa:	 3,080 - Done
 
