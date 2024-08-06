@@ -5,6 +5,15 @@ Ngày 3 tôi viết nhật ký
 
 Mục tiêu:
  1. Focus vào công việc
+  + Commemt my bug
+  + Review other source
+  + Update models
+  + Investigate and commit RZ/T1 again
+  + Manage task
+  + Support YA - dispose
+  + Support Vinh - excel library
+  + Support Nguyên
+ 
  2. Vượt qua nỗi sợ bản thân: 
   +2.1 Đối mặt với sự sợ hãi
   +2.2 Lên kế hoạch và tìm cách chế ngự nó
