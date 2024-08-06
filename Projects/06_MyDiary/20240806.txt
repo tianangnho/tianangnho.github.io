@@ -5,7 +5,7 @@ Ngày 3 tôi viết nhật ký
 
 Mục tiêu:
  1. Focus vào công việc
-  + Commemt my bug
+  + Commemt my bug - Done
   + Review other source
   + Update models
   + Investigate and commit RZ/T1 again
@@ -13,6 +13,7 @@ Mục tiêu:
   + Support YA - dispose
   + Support Vinh - excel library
   + Support Nguyên
+  + Check bug MU crash - log data
  
  2. Vượt qua nỗi sợ bản thân: 
   +2.1 Đối mặt với sự sợ hãi
@@ -25,7 +26,7 @@ Mục tiêu:
  6. Lên danh sách những thứ cần phải mua
  + Máy in
  + Giá sách có cửa
- + Máy hút chân không thực phẩm
+ + Máy hút chân không thực phẩm - Done
  + Ghế sofa giường
  + Để dành tiền lì xì
  + Để dành tiền Hấu học TA 7.5
@@ -44,6 +45,8 @@ Mục tiêu:
  + Phân tâm mua sắm
 2. Tôi phát hiện ra rằng có thể đóng học phí cho Hấu bằng thẻ Visa,
 cà trược tiếp tại trường.
+3. Đau đầu lúc cuối ngày
+4. Ngộp vì quá nhiều thứ để làm
 ====
 Các khoản cần chi tháng 8:
 Sum:		24,030 - 6,500
