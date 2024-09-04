@@ -1,0 +1,40 @@
+20240816
+Sologan: Tiến về vùng đất tự do
+Ngày 8 tôi viết nhật ký
+===
+Todo:
+1. MU model - update source code
+2. DevTest for my 2 issues
+3. Review
+  + Lam
+  + Hai
+  + YA
+  + Nguyen
+  + Vinh
+4. Create new JIRA from Kidahashi's request
+5. Create task for execution
+6. Check MU crash
+7. Check John's comment
+8. Record status
+9. Check Memory Usage on eclipse macOS
+================
+
+================
+Thứ tự ưu tiên
+1. Close DevTest
+2. Commit source bug
+3. Support Nguyen
+3. Fix source in model
+4. Review
+
+
+================
+Nỗi sợ:
+1. Sợ một sự thay đổi bất ngờ không kế hoạch
+
+=====
+Cần mua
++ Mua giá sách
++ Để dành tiền lì xì
++ Để dành tiền Hấu học TA
+======

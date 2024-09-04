@@ -1,0 +1,46 @@
+20240808
+Sologan: Tiến về vùng đất tự do
+Ngày 5 tôi viết nhật ký
+===
+Tôi cần thay đổi bản thân,
+lên kế hoạch và tuân thủ triệt để kế hoạch
+====
+Todo  
+  + Commemt my bug - Done
+  + Review other source
+  + Update models
+  + Investigate and commit RZ/T1 again
+  + Manage task
+  + Support YA - dispose
+  + Support Vinh - excel library - done
+  + Support Nguyên
+  + Check bug MU crash - log data
+======
+Thứ tự ưu tiên
+1. Close DevTest
+2. Commit source bug
+3. Support Nguyen
+3. Fix source in model
+4. Review
+5. Check Memory Usage on eclipse macOS
+
+======
+Nỗi sợ:
+1. Bế tắc trong solution của RZ/T, Memory Usage Crash
+2. Sợ sprint planning
+3. 
+
+=====
+Cần nhớ
++ Mua máy in
++ Mua giá sách
++ Để dành tiền lì xì
++ Để dành tiền Hấu học TA
+
+====
+Các khoản cần chi tháng 8:
++ Nước:		   200
+=====
+Tháng sau:
++ Nợ Visa:  8,000
+
