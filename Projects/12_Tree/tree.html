@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project Tree</title>
+	<link rel="stylesheet" type="text/css" href="css/format.css">
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/size.js"></script>
+</head>
+<body>
+	<div id="fontSizeWrapper">
+		<label for="fontSize">Font size</label>
+		<input type="range" value="1" id="fontSize" step="0.5" min="0.5" max="5" />
+	</div>
+	<ul class="tree">
+		<li>
+			<input type="checkbox" checked="checked" id="c1" />
+			<label class="tree_label" for="c1">Khác khao tự do</label>
+			<ul>
+				<li>
+					<input type="checkbox" checked="checked" id="c2" />
+					<label for="c2" class="tree_label">Công việc</label>
+					<ul>
+						<li><span class="tree_label">Duy trì cuộc sống</span></li>
+						<li><span class="tree_label">Gia tăng thu nhập</span></li>
+					</ul>
+				</li>
+				<li><span class="tree_label">Chuẫn bị hành lý</span></li>
+				<ul>
+					<li><span class="tree_label">Tìm hiểu chương trình</span></li>
+					<li><span class="tree_label">Chuẫn bị tài chính</span></li>
+				</ul>
+				<li><span class="tree_label">Nguồn thu nhập thụ động</span></li>
+			</ul>
+		</li>
+		<li>
+			<input type="checkbox" checked="checked" id="c5" />
+			<label class="tree_label" for="c5">Gia đình</label>
+			<ul>
+				<li>
+					<input type="checkbox" id="c6" />
+					<label for="c6" class="tree_label">Giáo dục con cái</label>
+				</li>
+				<li>
+					<input type="checkbox" id="c7" />
+					<label for="c7" class="tree_label">Giúp đỡ, tạo điều kiện</label>
+				</li>
+				<li>
+					<input type="checkbox" id="c8" />
+					<label for="c7" class="tree_label">Báo hiếu</label>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<input type="checkbox" checked="checked" id="c9"/>
+			<label class="tree_label" for="c9">Bản thân</label>
+			<ul>
+				<li>
+					<input type="checkbox" checked="checked" id="c10" />
+					<label for="c10" class="tree_label">Cải thiện</label>
+					<ul>
+						<li>
+							<input type="checkbox" id="c11"/>
+							<label for="c11" class="tree_label">Tinh thần</label>
+							<ul>
+								<li><span class="tree_label">Tập trung</span></li>
+								<li><span class="tree_label">Bình tĩnh</span></li>
+								<li><span class="tree_label">Không sợ hãi</span></li>
+								<li><span class="tree_label">Buông bỏ</span></li>
+								<li><span class="tree_label">Chấp nhận rủi ro</span></li>
+								<li><span class="tree_label">Thuê nhân sự thay vì tự làm</span></li>
+							</ul>
+						</li>
+						
+						<li>
+							<input type="checkbox" id="c12"/>
+							<label for="c12" class="tree_label">Sức khỏe</label>
+							<ul>
+								<li><span class="tree_label">Giảm cân</span></li>
+								<li><span class="tree_label">Ngủ không ngáy</span></li>
+								<li><span class="tree_label">Không bệnh tật</span></li>
+							</ul>
+						</li>
+						
+						<li>
+							<input type="checkbox" id="c13"/>
+							<label for="c13" class="tree_label">Năng lực</label>
+							<ul>
+								<li><span class="tree_label">Ngoại ngữ</span></li>
+								<li><span class="tree_label">Tin học</span></li>
+								<li><span class="tree_label">Sửa điện tử</span></li>
+							</ul>
+						</li>
+						
+					</ul>
+				</li>
+				<li><span class="tree_label">Cầu nguyện và phú dâng</span></li>
+				<li><span class="tree_label">Lập kế hoạch</span></li>
+				<li><span class="tree_label">Giữ kỷ luật</span></li>
+			</ul>
+		</li>
+	</ul>
+</body>
+
+</html>
+
+
+
