@@ -4,3 +4,7 @@ Ideas
 https://github.com/jamiewilson/form-to-google-sheets/blob/master/README.md
 
 2. Sửa dụng git bash để commit Tia nang nho
+
+3. Làm một app điện thoại - liên kết với 1 database và trích xuất dữ liệu - App android
+
+4. Làm một website
