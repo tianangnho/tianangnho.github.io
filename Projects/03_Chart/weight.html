@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Chart</title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+<script>
+  const xValues = [];
+  const yValues = [];
+  const weight = [90, 89, 88];
+  generateDateInMonth( "Jan", 1, 31, 1);
+  generateDateInMonth( "Feb", 1, 28, 1);
+  generateData("90 - x", 0, 20,1/3);
+
+  new Chart("myChart", {
+    type: "line",
+    data: {
+      labels: xValues,
+      datasets: [{
+        fill: false,
+        pointRadius: 1,
+        borderColor: "rgba(255,0,0,0.5)",
+        data: yValues
+      },{
+        fill: false,
+        pointRadius: 1,
+        borderColor: "blue",
+        data: weight
+      }]
+    },    
+    options: {
+      legend: {display: false},
+      title: {
+        display: true,
+        text: "y = 90 -  x",
+        fontSize: 16
+      }
+    }
+  });
+  function generateData(value, i1, i2, step = 1) {
+    for (let x = i1; x <= i2; x += step) {
+      yValues.push(eval(value));
+    }
+  }
+  function generateDateInMonth(month, i1, i2, step = 1) {
+    for (let x = i1; x <= i2; x += step) {
+      let a = x + "/" + month;
+      xValues.push(a);
+    }
+  }
+</script>
+
+
+<body>
+
+</body>
+</html>
