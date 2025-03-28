@@ -4,36 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>My diary</title>
-	<script>
-		window.addEventListener("load", () => {
-			fetch('data.json')
-				.then((res) => res.text())
-				.then((text) => {
-					//document.getElementById("demo").innerHTML = text;
-					const obj = JSON.parse(text);
-					//document.getElementById("demo").innerHTML = eobj.hoang;
-					var map = new Map(Object.entries(obj));
-					for (var item of map.keys()) {
-						var para = document.createElement("p");
-						para.innerHTML = item + "\n------";
-						document.getElementById("demo").appendChild(para);
-						parent = item;
-					}
-				});
-		});
-		function printChildren(parent) {
-			while (parent !== undefined) {
-				for (item in parent) {
-					var para = document.createElement("p");
-					para.innerHTML = item;
-					document.getElementById("demo").appendChild(para);
-					parent = item;
-				}
-
-			}
-
-		}
-	</script>
+	
 </head>
 
 <body style="background-color:#272a34;color:#dddddd;">
@@ -43,25 +14,32 @@
 	<p id="demo1"></p>
 	<p id="demo2"></p>
 	<p id="demo3"></p>
+	
 	<script>
-		fetch('data.json')
-		.then((res) => res.text())
-		.then((text) => {
-		const obj = JSON.parse(text);
-		document.getElementById("demo").innerHTML = obj.length;
-		document.getElementById("demo1").innerHTML = obj.hoang[0].Apr[0].date;
-		var results = [];
-		const newArray = Object.assign([], obj);
-		var results2 = Array.from(obj);
-		for (d in obj) {
-			results.push(d);
+		async function readFileLineByLine(url) {
+			const response = await fetch(url);
+			const reader = response.body.getReader();
+			const decoder = new TextDecoder('utf-8');
+			let { value: chunk, done: readerDone } = await reader.read();
+			let buffer = '';
+
+			while (!readerDone) {
+				buffer += decoder.decode(chunk, { stream: true });
+				let lines = buffer.split('\n');
+				buffer = lines.pop();
+				for (let line of lines) {
+					console.log(`Line from file: ${line}`);
+				}
+				({ value: chunk, done: readerDone } = await reader.read());
+			}
+
+			if (buffer.length > 0) {
+				console.log(`Line from file: ${buffer}`);
+			}
 		}
-		document.getElementById("demo2").innerHTML =results[0];
-		document.getElementById("demo3").innerHTML = results[1];
-		});
-		
+		readFileLineByLine('/20240801.txt')
 	</script>
 
 </body>
 
-</html>
+</html>`
