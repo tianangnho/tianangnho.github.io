@@ -4,7 +4,8 @@ function forceReload() {
   // Lấy URL hiện tại nhưng bỏ phần query string đi
   let baseUrl = window.location.href.split('?')[0];
   // Thêm query param timestamp để tránh cache
-  window.location.href = baseUrl + '?t=' + new Date().getTime();
+  let time = new Date().now();
+  window.location.href = baseUrl + '?t=' + time;
 }
 forceReload();
 </script>
