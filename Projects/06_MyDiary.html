@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Folder Index</title>
+</head>
+<body>
+  <h1>Select a folder</h1>
+  <input type="file" id="folderInput" webkitdirectory multiple>
+  <div id="output"></div>
+
+  <script>
+    document.getElementById("folderInput").addEventListener("change", function (e) {
+      const files = Array.from(e.target.files);
+      const structure = {};
+
+      files.forEach(file => {
+        const parts = file.webkitRelativePath.split("/");
+        let current = structure;
+
+        parts.forEach((part, i) => {
+          if (i === parts.length - 1) {
+            // file
+            current[part] = file;
+          } else {
+            // folder
+            current[part] = current[part] || {};
+            current = current[part];
+          }
+        });
+      });
+
+      function renderTree(obj) {
+        let html = "<ul>";
+        for (let key in obj) {
+          if (obj[key] instanceof File) {
+            html += `<li>${key}</li>`;
+          } else {
+            html += `<li><strong>${key}</strong>${renderTree(obj[key])}</li>`;
+          }
+        }
+        html += "</ul>";
+        return html;
+      }
+
+      document.getElementById("output").innerHTML = renderTree(structure);
+    });
+  </script>
+</body>
+</html>
