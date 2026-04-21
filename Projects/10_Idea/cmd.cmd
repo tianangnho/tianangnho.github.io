@@ -1,0 +1,1 @@
+for %%f in (*.md) do pandoc "%%f" -o "%%~nf.html" -s
