@@ -1,0 +1,11 @@
+
+Year 2026
+============
+This is year 2026
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   jan/*
+   feb/*
