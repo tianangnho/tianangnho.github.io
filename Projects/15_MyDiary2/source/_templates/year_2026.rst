@@ -1,0 +1,9 @@
+Year 2026
+=========
+
+.. toctree::
+    :maxdepth: 1
+    :caption: January
+    :glob:
+
+    jan/*
