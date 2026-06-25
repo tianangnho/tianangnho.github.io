@@ -26,6 +26,15 @@ if errorlevel 9009 (
 if "%1" == "" goto help
 
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
+
+REM rename folder
+if exist build\html\_static (
+    move build\html\_static build\html\static
+)
+
+REM fix HTML links
+python fix_static_path.py
+
 goto end
 
 :help
