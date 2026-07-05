@@ -12,7 +12,7 @@ documentation for details.
 ``
 
 - `My JIRA <https://quangtran12a115.atlassian.net/jira/software/projects/HG/boards/1/backlog>`_
-- `My Trello <https://trello.com/b/pJgHbdqu/my-trello-board>`
+- `My Trello <https://trello.com/b/pJgHbdqu/my-trello-board>`_
 
 .. toctree::
    :maxdepth: 2
