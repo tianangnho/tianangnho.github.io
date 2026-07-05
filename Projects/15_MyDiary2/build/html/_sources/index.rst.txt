@@ -11,8 +11,8 @@ Add your content using ``reStructuredText`` syntax. See the
 documentation for details.
 ``
 
-<li>`My JIRA <https://quangtran12a115.atlassian.net/jira/software/projects/HG/boards/1/backlog>`_ </li>
-<li>`My Trello <https://trello.com/b/pJgHbdqu/my-trello-board>`_</li>
+- `My JIRA <https://quangtran12a115.atlassian.net/jira/software/projects/HG/boards/1/backlog>`_
+- `My Trello <https://trello.com/b/pJgHbdqu/my-trello-board>`
 
 .. toctree::
    :maxdepth: 2
