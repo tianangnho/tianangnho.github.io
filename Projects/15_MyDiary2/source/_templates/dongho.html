@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đồng Hồ Kim</title>
+
+<style>
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+    background:transparent; /* bỏ background */
+}
+
+.clock{
+    width:300px;
+    height:300px;
+    border:4px solid #333;
+    border-radius:50%;
+    position:relative;
+    background:white;
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+.number{
+    position:absolute;
+    font-size:32px;      /* to hơn */
+    font-weight:700;
+    color:#222;
+    line-height:1;
+    user-select:none;
+}
+
+.center{
+    width:12px;
+    height:12px;
+    background:black;
+    border-radius:50%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.hand{
+    position:absolute;
+    bottom:50%;
+    left:50%;
+    transform-origin:bottom center;
+}
+
+.hour{
+    width:6px;
+    height:80px;
+    background:black;
+}
+
+.minute{
+    width:4px;
+    height:110px;
+    background:blue;
+}
+
+.second{
+    width:2px;
+    height:130px;
+    background:red;
+}
+
+.mark{
+    position:absolute;
+    width:4px;
+    height:20px;
+    background:#333;
+    border-radius:2px;
+}
+
+/* 1 giờ */
+.m1{
+    top:34px;
+    right:88px;
+    transform:rotate(30deg);
+}
+
+/* 2 giờ */
+.m2{
+    top:85px;
+    right:38px;
+    transform:rotate(60deg);
+}
+
+/* 4 giờ */
+.m4{
+    bottom:85px;
+    right:38px;
+    transform:rotate(120deg);
+}
+
+/* 5 giờ */
+.m5{
+    bottom:34px;
+    right:88px;
+    transform:rotate(150deg);
+}
+
+/* 7 giờ */
+.m7{
+    bottom:34px;
+    left:88px;
+    transform:rotate(210deg);
+}
+
+/* 8 giờ */
+.m8{
+    bottom:85px;
+    left:38px;
+    transform:rotate(240deg);
+}
+
+/* 10 giờ */
+.m10{
+    top:85px;
+    left:38px;
+    transform:rotate(300deg);
+}
+
+/* 11 giờ */
+.m11{
+    top:34px;
+    left:88px;
+    transform:rotate(330deg);
+}
+
+
+</style>
+</head>
+<body>
+
+
+<div class="clock">
+	
+<!-- Vạch giờ -->
+
+<div class="mark m1"></div>
+<div class="mark m2"></div>
+
+<div class="mark m4"></div>
+<div class="mark m5"></div>
+
+<div class="mark m7"></div>
+<div class="mark m8"></div>
+
+<div class="mark m10"></div>
+<div class="mark m11"></div>
+
+
+    <div class="number"
+         style="top:18px;left:50%;transform:translateX(-50%);">
+        12
+    </div>
+
+    <div class="number"
+         style="right:18px;top:50%;transform:translateY(-50%);">
+        3
+    </div>
+
+    <div class="number"
+         style="bottom:18px;left:50%;transform:translateX(-50%);">
+        6
+    </div>
+
+    <div class="number"
+         style="left:18px;top:50%;transform:translateY(-50%);">
+        9
+    </div>
+
+    <div class="hand hour" id="hour"></div>
+    <div class="hand minute" id="minute"></div>
+    <div class="hand second" id="second"></div>
+
+    <div class="center"></div>
+
+</div>
+
+
+<script>
+function updateClock() {
+    const now = new Date();
+
+    const sec = now.getSeconds();
+    const min = now.getMinutes();
+    const hr = now.getHours();
+
+    const secDeg = sec * 6;
+    const minDeg = min * 6 + sec * 0.1;
+    const hrDeg = (hr % 12) * 30 + min * 0.5;
+
+    document.getElementById("second").style.transform =
+        `translateX(-50%) rotate(${secDeg}deg)`;
+
+    document.getElementById("minute").style.transform =
+        `translateX(-50%) rotate(${minDeg}deg)`;
+
+    document.getElementById("hour").style.transform =
+        `translateX(-50%) rotate(${hrDeg}deg)`;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+</body>
+</html>

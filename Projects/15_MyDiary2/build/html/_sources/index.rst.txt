@@ -3,12 +3,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-MyDiary documentation
+My Life
 =====================
+Family - Honor - Reposibility
+------------------------------
+Leaving for Freedom or a Life of Regret
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+Hãy sống như chưa tường được sống, đừng sống như chưa sống bao giờ. "Khuyết danh"
+
+This is a summary of my life, the joys, sadness, worries and reflections.
 ``
 
 - `My JIRA <https://quangtran12a115.atlassian.net/jira/software/projects/HG/boards/1/backlog>`_
