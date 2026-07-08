@@ -20,3 +20,15 @@ for root, _, files in os.walk(BUILD_DIR):
                 f.write(content)
 
 print("Fully replaced _static → static (all cases)")
+
+
+from pathlib import Path
+
+css_file = Path("build/html/static/alabaster.css")
+
+content = css_file.read_text(encoding="utf-8")
+content = content.replace("Georgia", "Meriland")
+
+css_file.write_text(content, encoding="utf-8")
+
+print("Đã đổi Georgia -> Meriland")
