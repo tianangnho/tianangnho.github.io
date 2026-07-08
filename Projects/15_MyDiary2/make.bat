@@ -28,9 +28,12 @@ if "%1" == "" goto help
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
 
 REM rename folder
-if exist build\html\_static (
-    move build\html\_static build\html\static
+
+if exist build\html\static (
+    rmdir /s /q build\html\static
 )
+
+ren build\html\_static static
 
 REM fix HTML links
 python fix_static_path.py
