@@ -1,0 +1,52 @@
+
+<textarea id="txt"></textarea>
+<button onclick="save()">Save</button>
+
+<script>
+async function save() {
+
+    const token =
+        localStorage.getItem("github_token");
+
+    const content =
+        document.getElementById("txt").value;
+
+    const api =
+        "https://api.github.com/repos/" +
+        "tianangnho/tianangnho.github.io/" +
+        "contents/Projects/17_simpleLogin/data.json";
+
+    // Lấy sha hiện tại
+    const r = await fetch(api, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    });
+
+    const file = await r.json();
+
+    // Update file
+    const update = await fetch(api, {
+        method: "PUT",
+        headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            message: "update data",
+            content: btoa(
+                JSON.stringify({
+                    message: content
+                })
+            ),
+            sha: file.sha
+        })
+    });
+
+    const result = await update.json();
+
+    console.log(result);
+
+    alert("Saved!");
+}
+</script>
