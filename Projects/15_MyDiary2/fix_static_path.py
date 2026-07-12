@@ -1,5 +1,5 @@
 # fix_static_path.py
-import os
+import os, re
 
 BUILD_DIR = "build/html"
 
@@ -15,6 +15,17 @@ for root, _, files in os.walk(BUILD_DIR):
             content = content.replace("/_static/", "/static/")
             content = content.replace('"_static/', '"static/')
             content = content.replace("'_static/", "'static/")
+            content = re.sub(
+                r'<p>\s*☑\s*(.*?)\s*</p>',
+                r'<p><input type="checkbox" checked>\1</input></p>',
+                content
+            )
+            content = re.sub(
+                r'<p>\s*☐\s*(.*?)\s*</p>',
+                r'<p><input type="checkbox">\1</input></p>',
+                content
+            )                                               
+
 
             with open(path, "w", encoding="utf-8") as f:
                 f.write(content)
