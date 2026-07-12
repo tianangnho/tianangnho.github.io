@@ -8,6 +8,7 @@ My Life
 Family - Honor - Reposibility
 ------------------------------
 Leaving for Freedom or a Life of Regret
+
 Hãy sống như chưa tường được sống, đừng sống như chưa sống bao giờ. "Khuyết danh"
 
 This is a summary of my life, the joys, sadness, worries and reflections.
