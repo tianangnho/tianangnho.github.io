@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-
-<body style="background-color:#272a34;color:#dddddd;">
-  <div>
-  <p> Hãy nhập một từ vào đây</p>
-    <textarea id="txt"></textarea>
-	<button onclick="save()">Save</button>
-</body>
 <script>
 async function save() {
 
@@ -53,8 +45,22 @@ async function save() {
 
     alert("Saved!"+ content);
 }
+
+function saveChecklist(fileName) {
+  const checkboxes = document.querySelectorAll(
+    'input[type="checkbox"]'
+  );
+
+  const checklist = Array.from(checkboxes).map(cb => ({
+    text: cb.closest('label')?.textContent.trim() ||
+          cb.parentElement?.textContent.trim() ||
+          '',
+    checked: cb.checked
+  }));
+
+  return {
+    file: fileName,
+    checklist
+  };
+}
 </script>
-
-</html>
-
-
