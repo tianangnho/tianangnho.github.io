@@ -1,60 +1,131 @@
 <!DOCTYPE html>
+<html lang='en'>
 
-<body style="background-color:#272a34;color:#dddddd;">
-  <div>
-  <p> Hãy nhập một từ vào đây</p>
-    <textarea id="txt"></textarea>
-	<button onclick="save()">Save</button>
-</body>
-<script>
-async function save() {
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
 
-    const token =
-        localStorage.getItem("github_token");
+</head>
 
-    const content =
-        document.getElementById("txt").value;
+<body>
+    <div id="checklist"></div>
 
-    const api =
-        "https://api.github.com/repos/" +
-        "tianangnho/tianangnho.github.io/" +
-        "contents/Projects/17_simpleLogin/data.json";
+    <script>
+        let checklistData = [];
 
-    // Lấy sha hiện tại
-    const r = await fetch(api, {
-        headers: {
-            Authorization: `Bearer ${token}`
+        fetch("Data.json")
+            .then(response => response.json())
+            .then(data => {
+
+                checklistData = data;
+
+                let html = "";
+
+                data.forEach(topic => {
+                    html += `<h3>${topic.topic}</h3>`;
+                    html += "<ul>";
+
+                    topic.checklist.forEach(item => {
+                        html += `
+                    <li>
+                        <input
+                            type="checkbox"
+                            data-id="${item.id}"
+                            ${item.status === "true" ? "checked" : ""}
+                        >
+                        ${item.name}
+                    </li>
+                `;
+                    });
+
+                    html += "</ul>";
+                });
+
+                document.getElementById("checklist").innerHTML = html;
+
+                document
+                    .querySelectorAll("#checklist input[type='checkbox']")
+                    .forEach(checkbox => {
+
+                        checkbox.addEventListener("change", async function () {
+
+                            const itemId = this.dataset.id;
+                            const newStatus = this.checked;
+
+                            // update dữ liệu local
+                            checklistData.forEach(topic => {
+
+                                const item =
+                                    topic.checklist.find(x => x.id === itemId);
+
+                                if (item) {
+                                    item.status = String(newStatus);
+                                }
+                            });
+
+                            await save(checklistData);
+                        });
+                    });
+            })
+            .catch(console.error);
+
+        async function save(data) {
+
+            const token = localStorage.getItem("github_token");
+
+            const api =
+                "https://api.github.com/repos/" +
+                "tianangnho/tianangnho.github.io/" +
+                "contents/Projects/17_simpleLogin/Data.json";
+
+            try {
+
+                // Lấy SHA hiện tại
+                const r = await fetch(api, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+
+                const file = await r.json();
+
+                // GitHub yêu cầu Base64 UTF-8
+                const content = btoa(
+                    unescape(
+                        encodeURIComponent(
+                            JSON.stringify(data, null, 2)
+                        )
+                    )
+                );
+
+                const update = await fetch(api, {
+                    method: "PUT",
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        message: "Update checklist status",
+                        content: content,
+                        sha: file.sha
+                    })
+                });
+
+                const result = await update.json();
+
+                if (update.ok) {
+                    console.log("Saved", result);
+                } else {
+                    console.error(result);
+                    alert("Save failed");
+                }
+
+            } catch (err) {
+                console.error(err);
+            }
         }
-    });
-
-    const file = await r.json();
-
-    // Update file
-    const update = await fetch(api, {
-        method: "PUT",
-        headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            message: "update data",
-            content: btoa(
-                JSON.stringify({
-                    message: content
-                })
-            ),
-            sha: file.sha
-        })
-    });
-
-    const result = await update.json();
-
-    console.log(result);
-
-    alert("Saved!"+ content);
-}
-</script>
+    </script>
+</body>
 
 </html>
-
-
