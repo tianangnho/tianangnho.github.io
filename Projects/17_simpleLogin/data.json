@@ -1,0 +1,32 @@
+[
+	{
+		"topic": "tp1",
+		"checklist": [
+			{
+				"id": "tp1_id_1",
+				"name": "Action1",
+				"status": "true"
+			},
+			{
+				"id": "tp1_id_2",
+				"name": "Action2",
+				"status": "false"
+			}
+		]
+	},
+	{
+		"topic": "tp2",
+		"checklist": [
+			{
+				"id": "tp2_id_1",
+				"name": "Action1",
+				"status": "true"
+			},
+			{
+				"id": "tp2_id_2",
+				"name": "Action2",
+				"status": "false"
+			}
+		]
+	}
+]
