@@ -9,7 +9,7 @@ export async function save(data) {
     const api =
         "https://api.github.com/repos/" +
         "tianangnho/tianangnho.github.io/" +
-        "contents/Projects/17_simpleLogin/Data.json";
+        "contents/Projects/17_simpleLogin/data.json";
 
     const r = await fetch(api, {
         headers: {
