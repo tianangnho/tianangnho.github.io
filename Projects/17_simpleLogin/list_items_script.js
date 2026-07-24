@@ -1,16 +1,15 @@
 import { save } from "./script2.js";
-
+let version= "";
 let checklistData = [];
 
 fetch("Data.json")
     .then(response => response.json())
-    .then(data => {
-
-        checklistData = data;
+    .then(info => {
+        checklistData = info.data;
 
         let html = "";
 
-        data.forEach(topic => {
+        checklistData.forEach(topic => {
             html += `<h3>${topic.topic}</h3>`;
             html += "<ul>";
 

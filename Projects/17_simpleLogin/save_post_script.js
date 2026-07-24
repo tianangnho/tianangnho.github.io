@@ -1,4 +1,8 @@
 export async function save(data) {
+	const obj = {
+		version: Date.now(),
+		data: data
+	};
 
     const token = localStorage.getItem("github_token");
 
@@ -18,7 +22,7 @@ export async function save(data) {
     const content = btoa(
     Array.from(
         new TextEncoder().encode(
-            JSON.stringify(data, null, 2)
+            JSON.stringify(obj, null, 2)
         ),
         byte => String.fromCharCode(byte)).join(""));
 
