@@ -1,5 +1,7 @@
+import { state } from "./status_script.js";
 import { save } from "./save_post_script.js";
 let version= "";
+
 let checklistData = [];
 
 fetch("Data.json")
@@ -36,7 +38,7 @@ fetch("Data.json")
             .forEach(checkbox => {
 
                 checkbox.addEventListener("change", async function () {
-
+                    state.currentVersion = Date.now();
                     const itemId = this.dataset.id;
                     const newStatus = this.checked;
 
