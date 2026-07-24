@@ -4,7 +4,10 @@ let version= "";
 
 let checklistData = [];
 
-fetch("data.json")
+fetch(
+    `data.json?t=${Date.now()}`,
+    { cache: "no-store" }
+  )
     .then(response => response.json())
     .then(info => {
         checklistData = info.data;
