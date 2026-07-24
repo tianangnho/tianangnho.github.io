@@ -1,4 +1,4 @@
-import { save } from "./script2.js";
+import { save } from "./save_post_script.js";
 let version= "";
 let checklistData = [];
 
