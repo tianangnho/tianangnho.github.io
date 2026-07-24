@@ -1,4 +1,3 @@
-<script>
 let currentVersion = null;
 
 async function checkDeploy() {
@@ -27,4 +26,3 @@ async function checkDeploy() {
 
 checkDeploy();
 setInterval(checkDeploy, 5000);
-</script>
