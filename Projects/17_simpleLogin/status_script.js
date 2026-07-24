@@ -28,7 +28,7 @@ async function checkDeploy() {
 
   const json = await res.json();
 
-  if (json.version !== state.currentVersion) {
+  if (json.version === state.currentVersion) {
     document.getElementById("status").innerHTML =
       `✅ Deploy xong! Version mới: ${json.version}`;
 
