@@ -4,7 +4,7 @@ let version= "";
 
 let checklistData = [];
 
-fetch("Data.json")
+fetch("data.json")
     .then(response => response.json())
     .then(info => {
         checklistData = info.data;
