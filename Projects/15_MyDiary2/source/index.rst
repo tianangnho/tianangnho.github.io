@@ -8,6 +8,7 @@ My Life
 Family - Honor - Reposibility
 ------------------------------
 Leaving for Freedom or a Life of Regret
+Hướng Phó Tự Do Chi Địa, Nhi Thị Chung Thân Hối Tiếc
 
 Hãy sống như chưa tường được sống, đừng sống như chưa sống bao giờ. "Khuyết danh"
 
