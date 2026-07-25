@@ -27,16 +27,20 @@ Câu chuyện bắt đầu bằng một buổi livestream của Ms. Nguyễn Ph�
 
 Chương 3: Tập ấp
 --------------------------------------
-Trong kho tàng ca dao có mấy câu sau:
-"Con vua thì lại làm vua,
-Con sãi ở chùa thì quét lá đa.
-Bao giờ dân nỗi can qua,
-Con vua thất thế lại ra quét chùa"
+    | “Con vua thì lại làm vua,
+    | Con sãi ở chùa thì quét lá đa.
+    | Bao giờ dân nổi can qua,
+    | Con vua thất thế lại ra quét chùa.”
+    |
+    | — Ca dao
 
 Chương 4: Bầy sư tử chết như chó
 ----------------------------------
-"Một đàn chó sẽ chiến đấu như sư tử nếu được một con sư tử lãnh đạo.
-Một bầy sư tử chết như chó nếu được một con chó lãnh đạo"
+    | “Một đàn chó sẽ chiến đấu như sư tử nếu được một con sư tử lãnh đạo.
+    | Một bầy sư tử chết như chó nếu để một con chó chỉ huy"
+	|
+    | — Alexander the Great
+
 --------------------------------------
 
 Chương 5: Công nghệ lõi
