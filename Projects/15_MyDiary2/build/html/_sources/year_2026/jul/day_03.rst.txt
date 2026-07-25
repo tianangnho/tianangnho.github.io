@@ -16,7 +16,6 @@ Todo
 #. ☐ Execute DevTest
 
 
-
 Reflection
 ----------
  - Still consistent. Good progress.
