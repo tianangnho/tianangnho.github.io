@@ -1,3 +1,4 @@
 git add .
 git commit -m "update diary"
-git push
+git pull --rebase
+git push --force-with-lease
