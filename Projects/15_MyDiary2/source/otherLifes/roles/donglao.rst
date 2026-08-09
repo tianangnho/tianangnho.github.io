@@ -1,8 +1,8 @@
 
-Paradise East of Laos
+The winds blow in Eastern Laos
 =================================
 
-:Vietnamese Name: Thiên đường xứ Đông Lào
+:Vietnamese Name: Gió thổi xứ Đông Lào
 :Author: H.N
 :Start: July 25, 2026
 
@@ -38,7 +38,7 @@ Chương 4: Bầy sư tử chết như chó
 ----------------------------------
     | “Một đàn chó sẽ chiến đấu như sư tử nếu được một con sư tử lãnh đạo.
     | Một bầy sư tử chết như chó nếu để một con chó chỉ huy"
-	|
+    |
     | — Alexander the Great
 
 --------------------------------------
@@ -49,3 +49,7 @@ Chương 5: Công nghệ lõi
 
 Chương 6: Sự trốn chạy
 --------------------------------
+
+Chương 7: Học giả - Thi giả - Bao che thật
+------------------------------------------------
+Câu chuyện bắt đầu bằng một bảng tin 147 điểm 10 môn toán tại điểm thi tốt nghiệp trường chuyên Tuyên Quang.
