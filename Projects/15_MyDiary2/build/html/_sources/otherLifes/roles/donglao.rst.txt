@@ -41,10 +41,22 @@ Chương 4: Bầy sư tử chết như chó
     |
     | — Alexander the Great
 
---------------------------------------
-
 Chương 5: Công nghệ lõi
 --------------------------------------
+Vịt Lam luôn bô bô về công nghệ lõi.
+Nhưng tại xứ Đông Lào công nghệ lõi ấy là phân lô bán nền, chuyển đổi mục đích sử dụng đất.
+Để các bạn hiểu rõ bối cảnh.
+Tại VN, không có quyền tư hữu đất đại, đất đai thuộc sỡ hữu toàn dân do nhà nước quản lý.
+Người dân chỉ có có quyền sử dụng dất.
+
+Nhà nước quy định rất nhiều mục đích sử dụng đất - nói tắt là có nhiều loại đất.
++ Đất nông nghiệp, đất trồng cây: Được định giá thấp
++ Đất thổ cư, đất xây dựng nhà ở: Được định giá cao
+
+Các công ty quốc doanh như Vit phét, No vờ lan, ... quy hoạch lấy đất cưa người dân giá rẻ.
+Chuyển đổi mục đích sử dụng đất, rồi phân lô bán nền với giá cao.
+Cùng một mãnh đất, không cải tạo không cày xới, chỉ đổi nội dung trên một tờ giáy và giá trị tăng cao.
+Vậy giá trị thặng dư này đi đâu, nó đi từ túi người dân chảy vào túi công ty và quan chức tham nhũng.
 
 
 Chương 6: Sự trốn chạy
@@ -53,3 +65,15 @@ Chương 6: Sự trốn chạy
 Chương 7: Học giả - Thi giả - Bao che thật
 ------------------------------------------------
 Câu chuyện bắt đầu bằng một bảng tin 147 điểm 10 môn toán tại điểm thi tốt nghiệp trường chuyên Tuyên Quang.
+Dẫn đến việc 328 thí sinh tại điểm thi được thi lại.
+
+Câu hỏi đặt ra là tại sao Tuyên Quang được thi lại còn các thí sinh Quảng trị thì không?
+Phải chăng thi lại để lấp liếm bao che cho con cái cán bộ tại Tuyên Quang.
+
+Chương 8: Ước nguyện cực đoan
+------------------------------------------------
+Đây là một ước nguyện cực đoan:
+Có một dũng sĩ nào đó, đánh thuốc độc vào không khí hoặc đánh bom cho sập tòa nhà QH khi nó đang diễn ra họp.
+Một cái kết giống chuyện Samson trong sách Cựu Ước.
+Ông ấy đã đánh sập hai cột trụ của cung điện, và hôm đó ông đã chết nhưng giết được số người Philitin nhiều hơn trong
+suốt cuộc đời ông
