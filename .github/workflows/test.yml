@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Print token length
         run: |
-          echo "Token length: $GITHUB_TOKEN" 
+          echo "Token length: ${#GITHUB_TOKEN}" 
 
       - name: Masked echo
         run: |
