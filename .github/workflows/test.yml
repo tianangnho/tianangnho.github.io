@@ -14,5 +14,4 @@ jobs:
           echo "Token length: ${#GITHUB_TOKEN}" 
 
       - name: Masked echo
-        run: |
-          echo "Token is $GITHUB_TOKEN"
+        run: echo "Token is $GITHUB_TOKEN"
