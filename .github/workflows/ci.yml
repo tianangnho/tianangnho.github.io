@@ -5,6 +5,11 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write   # 👈 thêm dòng này để fix lỗi
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -14,9 +19,10 @@ jobs:
       - name: Inject env into index.html
         run: echo "<script>window.MY_ENV='${{ secrets.MY_ENV }}'</script>" >> index.html
 
-      - name: Deploy to GitHub Pages
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
-      - name: Deploy
+
+      - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
