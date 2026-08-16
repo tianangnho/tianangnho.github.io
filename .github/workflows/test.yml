@@ -10,7 +10,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
     steps:
       - name: Print token length
-        run: echo "Token length: ${#GITHUB_TOKEN}"
+        run: 'echo "Token length: ${#GITHUB_TOKEN}"'
 
       - name: Masked echo
         run: echo "Token is $GITHUB_TOKEN"
