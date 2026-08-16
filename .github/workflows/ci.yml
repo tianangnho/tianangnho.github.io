@@ -18,8 +18,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Inject env into index.html
-        run: echo "<script>window.MY_ENV='${{ secrets.MY_ENV }}'</script>" >> index.html
+      - name: Create config.js
+        run: echo "window.MY_ENV='${{ secrets.MY_ENV }}'" > config.js
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
