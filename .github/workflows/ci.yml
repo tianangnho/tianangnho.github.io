@@ -1,3 +1,9 @@
+name: CI
+
+on: 
+  push:        # chạy khi có push
+    branches:
+      - main   # chỉ chạy khi push lên nhánh main
 jobs:
   build:
     runs-on: ubuntu-latest
