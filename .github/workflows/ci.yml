@@ -8,7 +8,7 @@ on:
 permissions:
   contents: read
   pages: write
-  id-token: write   # 👈 thêm dòng này để fix lỗi
+  id-token: write   #  thêm dòng này để fix lỗi
 
 jobs:
   deploy:
