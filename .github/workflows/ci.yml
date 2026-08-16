@@ -1,4 +1,9 @@
 jobs:
-  test:
-    env:
-      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Tạo file config.js
+        run: echo "window.MY_ENV='${{ secrets.MY_ENV }}'" > config.js
+      - name: Run script
+        run: |
+          echo "<script src='config.js'></script><script src='index.js'></script>" > index.html
