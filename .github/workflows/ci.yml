@@ -1,15 +1,22 @@
-name: CI
+name: Build and Deploy
 
-on: 
-  push:        # chạy khi có push
+on:
+  push:
     branches:
-      - main   # chỉ chạy khi push lên nhánh main
+      - main
+
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Tạo file config.js
-        run: echo "window.MY_ENV='${{ secrets.MY_ENV }}'" > config.js
-      - name: Run script
-        run: |
-          echo "<script src='config.js'></script><script src='index.js'></script>" > index.html
+      - uses: actions/checkout@v3
+
+      - name: Inject env into index.html
+        run: echo "<script>window.MY_ENV='${{ secrets.MY_ENV }}'</script>" >> index.html
+
+      - name: Deploy to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Deploy
+        uses: actions/deploy-pages@v4
