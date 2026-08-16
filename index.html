@@ -14,8 +14,14 @@
   <div>
     <iframe src="./Projects/05_CAD/Migration.html" width="8000" height="10000" frameBorder="0" </iframe>
   </div>
-  <script src="config.js">
+  <script src="config.js"></script>
+  <script>
+    function showSecret() {
+      alert("MY_ENV = " + window.MY_ENV);
+    }
   </script>
+
+  <button onclick="showSecret()">Show Secret</button>
 </body>
 
 </html>
