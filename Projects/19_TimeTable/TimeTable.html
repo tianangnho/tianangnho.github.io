@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thời Gian Biểu Tuần</title>
+<script>
+const actions = [
+  {
+    "d": "T2",
+    "s": "08:00",
+    "e": "09:00",
+    "t": "Daily Meeting"
+  },
+  {
+    "d": "T2",
+    "s": "09:00",
+    "e": "11:00",
+    "t": "Coding"
+  },
+  {
+    "d": "T3",
+    "s": "13:00",
+    "e": "14:30",
+    "t": "Review Design"
+  }
+];
+</script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        min-width: 1000px;
+		table-layout: auto;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 4px;
+        text-align: center;
+        height: 28px;
+		width: 12.5%;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+        position: sticky;
+        top: 0;
+		z-index: 2; /* cao hơn td.time */
+    }
+
+    td.time {
+        background-color: #f2f2f2;
+        font-weight: bold;
+        position: sticky;
+        left: 0;
+		z-index: 1;
+		max-width: 60px;
+    }
+
+    .container {
+        overflow: auto;
+        max-height: 90vh;
+    }
+	.today-column {
+		border-left: 3px solid #ff9800 !important;
+		border-right: 3px solid #ff9800 !important;
+	}
+
+	.today-header {
+		border: 3px solid #ff9800 !important;
+	}
+
+
+</style>
+</head>
+<body>
+
+<h2>Thời Gian Biểu Tuần</h2>
+<div style="margin-bottom:10px;">
+    <label><b>Xem:</b></label>
+    <select id="dayFilter">
+        <option value="all">Tất cả</option>
+        <option value="today">Hôm nay</option>
+        <option value="1">Thứ Hai</option>
+        <option value="2">Thứ Ba</option>
+        <option value="3">Thứ Tư</option>
+        <option value="4">Thứ Năm</option>
+        <option value="5">Thứ Sáu</option>
+        <option value="6">Thứ Bảy</option>
+        <option value="0">Chủ Nhật</option>
+    </select>
+</div>
+<div class="container">
+<table>
+    <thead>
+        <tr>
+            <th>Thời gian</th>
+            <th>Thứ Hai</th>
+            <th>Thứ Ba</th>
+            <th>Thứ Tư</th>
+            <th>Thứ Năm</th>
+            <th>Thứ Sáu</th>
+            <th>Thứ Bảy</th>
+            <th>Chủ Nhật</th>
+        </tr>
+    </thead>
+    <tbody id="schedule-body">
+    </tbody>
+</table>
+</div>
+
+<script>
+const body = document.getElementById("schedule-body");
+
+for (let hour = 0; hour < 24; hour++) {
+    for (let minute = 0; minute < 60; minute += 15) {
+
+        const time =
+            String(hour).padStart(2, '0') + ":" +
+            String(minute).padStart(2, '0');
+
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td class="time">${time}</td>
+            <td data-day="T2" data-time="${time}"></td>
+            <td data-day="T3" data-time="${time}"></td>
+            <td data-day="T4" data-time="${time}"></td>
+            <td data-day="T5" data-time="${time}"></td>
+            <td data-day="T6" data-time="${time}"></td>
+            <td data-day="T7" data-time="${time}"></td>
+            <td data-day="CN" data-time="${time}"></td>
+        `;
+
+        body.appendChild(row);
+    }
+}
+function timeToMinute(time) {
+    const [h, m] = time.split(":").map(Number);
+    return h * 60 + m;
+}
+function getTaskColor(taskName) {
+
+    let hash = 0;
+
+    for (let i = 0; i < taskName.length; i++) {
+        hash = taskName.charCodeAt(i) + ((hash << 5) - hash);
+    }
+
+    const hue = Math.abs(hash % 360);
+
+    return `hsl(${hue}, 70%, 80%)`;
+}
+function loadSchedule(actions) {
+
+    actions.forEach(action => {
+
+        const start = timeToMinute(action.s);
+        const end = timeToMinute(action.e);
+
+        const color = getTaskColor(action.t);
+
+        document
+            .querySelectorAll(`td[data-day="${action.d}"]`)
+            .forEach(cell => {
+
+                const time = timeToMinute(cell.dataset.time);
+
+                if (time >= start && time < end) {
+
+                    cell.style.backgroundColor = color;
+                    cell.style.border = "1px solid #888";
+
+                    if (time === start) {
+                        cell.textContent = action.t;
+                        cell.style.fontWeight = "bold";
+                    }
+                }
+            });
+    });
+}
+loadSchedule(actions);
+</script>
+<script>
+function applyFilter(value) {
+    const table = document.querySelector("table");
+    const rows = table.rows;
+
+    // Hiện tất cả trước
+    for (let r = 0; r < rows.length; r++) {
+        for (let c = 1; c < rows[r].cells.length; c++) {
+            rows[r].cells[c].style.display = "";
+        }
+    }
+
+    if (value === "all") {
+        return;
+    }
+
+    let dayIndex;
+
+    if (value === "today") {
+        // JS: CN=0, T2=1, ..., T7=6
+        dayIndex = new Date().getDay();
+    } else {
+        dayIndex = parseInt(value);
+    }
+
+    // Mapping sang cột bảng
+    const columnMap = {
+        1: 1, // T2
+        2: 2, // T3
+        3: 3, // T4
+        4: 4, // T5
+        5: 5, // T6
+        6: 6, // T7
+        0: 7  // CN
+    };
+
+    const selectedColumn = columnMap[dayIndex];
+
+    for (let r = 0; r < rows.length; r++) {
+        for (let c = 1; c < rows[r].cells.length; c++) {
+            if (c !== selectedColumn) {
+                rows[r].cells[c].style.display = "none";
+            }
+        }
+    }
+}
+
+document.getElementById("dayFilter").addEventListener("change", function() {
+    applyFilter(this.value);
+});
+</script>
+<script>
+window.addEventListener('load', () => {
+    const now = new Date();
+
+    const currentMinutes =
+        now.getHours() * 60 + now.getMinutes();
+
+    let closestCell = null;
+    let minDiff = Infinity;
+
+    document.querySelectorAll('td.time').forEach(cell => {
+        const text = cell.textContent.trim();
+
+        if (/^\d{2}:\d{2}$/.test(text)) {
+            const [h, m] = text.split(':').map(Number);
+            const minutes = h * 60 + m;
+
+            const diff = Math.abs(minutes - currentMinutes);
+
+            if (diff < minDiff) {
+                minDiff = diff;
+                closestCell = cell;
+            }
+        }
+    });
+
+    if (closestCell) {
+
+        // Scroll tới vị trí hiện tại
+        closestCell.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
+    }
+});
+
+</script>
+
+<script>
+let currentLine = null;
+
+function updateCurrentTimeLine() {
+    const now = new Date();
+
+    // Mốc 15 phút hiện tại
+    const quarterMinute = Math.floor(now.getMinutes() / 15) * 15;
+
+    const hh = String(now.getHours()).padStart(2, '0');
+    const mm = String(quarterMinute).padStart(2, '0');
+
+    const rowTime = `${hh}:${mm}`;
+
+    const timeCell = [...document.querySelectorAll('td.time')]
+        .find(td => td.textContent.trim() === rowTime);
+
+    if (!timeCell) return;
+
+    // Xóa line cũ
+    if (currentLine) {
+        currentLine.remove();
+    }
+
+    const row = timeCell.parentElement;
+
+    row.style.position = 'relative';
+
+    // Số phút đã trôi qua trong block 15 phút
+    const passedMinutes =
+        (now.getMinutes() % 15) + now.getSeconds() / 60;
+
+    const percent = (passedMinutes / 15) * 100;
+
+    currentLine = document.createElement('div');
+
+    Object.assign(currentLine.style, {
+        position: 'absolute',
+        left: '0',
+        right: '0',
+        top: percent + '%',
+        height: '2px',
+        background: 'red',
+        zIndex: '9999',
+        pointerEvents: 'none'
+    });
+
+    row.appendChild(currentLine);
+}
+
+// Scroll lần đầu đến vị trí hiện tại
+function scrollToCurrentTime() {
+    const now = new Date();
+
+    const quarterMinute = Math.floor(now.getMinutes() / 15) * 15;
+
+    const hh = String(now.getHours()).padStart(2, '0');
+    const mm = String(quarterMinute).padStart(2, '0');
+
+    const rowTime = `${hh}:${mm}`;
+
+    const cell = [...document.querySelectorAll('td.time')]
+        .find(td => td.textContent.trim() === rowTime);
+
+    if (cell) {
+        cell.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
+    }
+}
+
+window.onload = () => {
+    scrollToCurrentTime();
+    updateCurrentTimeLine();
+
+    // Cập nhật mỗi 10 giây
+    setInterval(updateCurrentTimeLine, 10000);
+};
+</script>
+<script>
+function highlightTodayColumn() {
+    const dayMap = {
+        1: 1, // Thứ Hai
+        2: 2,
+        3: 3,
+        4: 4,
+        5: 5,
+        6: 6,
+        0: 7  // Chủ Nhật
+    };
+
+    const colIndex = dayMap[new Date().getDay()];
+
+    document.querySelectorAll('table tr').forEach((row, i) => {
+        const cell = row.children[colIndex];
+        if (!cell) return;
+
+        cell.classList.add(i === 0 ? 'today-header' : 'today-column');
+    });
+}
+
+window.addEventListener('load', highlightTodayColumn);
+</script>
+
+</body>
+</html>
