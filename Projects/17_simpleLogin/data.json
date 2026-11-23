@@ -17,11 +17,11 @@
       ]
     },
     {
-      "topic": "Save Time",
+      "topic": "Improve E skill",
       "checklist": [
         {
-          "id": "tp2_id_1",
-          "name": "Action1",
+          "id": "id2_1",
+          "name": "Luyện tập các cặp phụ âm",
           "status": "true"
         },
         {
